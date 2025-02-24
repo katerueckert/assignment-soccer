@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework Assignment 5 - Soccer Tickets Page</title>
+    <link rel="stylesheet" href="lakeukickeesoccer.css" />
+    <script>    
+      function processForm(form){
+         console.log('in form');
+         let x1 = 0; // March 31 num of tickets
+         let x2 = 0; // April 1 num of tickets
+         let x3 = 0; // April 8 num of tickets
+         let x4 = 0; // April 14 num of tickets
+         let x5 = 0; // April 18 num of tickets
+         let x6 = 0; // April 21 num of tickets
+         let x7 = 0; // April 29 num of tickets
+         let display = "";
+         if (form.march31.checked) {
+            // how many tickets?
+            x1 = form.march31qty.value;
+            display+= "March 31st, " + x1 + " ticket(s) ";
+            price = form.march31price.value;
+            x1 = parseInt(x1) * parseFloat(price);
+            display += "for $" + x1.toFixed(2) + "<br/>";
+         }
+         if (form.april1.checked) {
+            // how many tickets?
+            x2 = form.april1qty.value;
+            display+= "April 1st, " + x2 + " ticket(s) ";
+            price = form.april1price.value;
+            x2 = parseInt(x2) * parseFloat(price);
+            display += "for $" + x2.toFixed(2) + "<br/>";
+         }
+         if (form.april8.checked) {
+            // how many tickets?
+            x3 = form.april8qty.value;
+            display+= "April 8th, " + x3 + " ticket(s) ";
+            price = form.april8price.value;
+            x3 = parseInt(x3) * parseFloat(price);
+            display += "for $" + x3.toFixed(2) + "<br/>";
+         }
+         if (form.april14.checked) {
+            // how many tickets?
+            x4 = form.april14qty.value;
+            display+= "April 14th, " + x4 + " ticket(s) ";
+            price = form.april14price.value;
+            x4 = parseInt(x4) * parseFloat(price);
+            display += "for $" + x4.toFixed(2) + "<br/>";
+         }
+         if (form.april18.checked) {
+            // how many tickets?
+            x5 = form.april18qty.value;
+            display+= "April 18th, " + x5 + " ticket(s) ";
+            price = form.april18price.value;
+            x5 = parseInt(x5) * parseFloat(price);
+            display += "for $" + x5.toFixed(2) + "<br/>";
+         }
+         if (form.april21.checked) {
+            // how many tickets?
+            x6 = form.april21qty.value;
+            display+= "April 21th, " + x6 + " ticket(s) ";
+            price = form.april21price.value;
+            x6 = parseInt(x6) * parseFloat(price);
+            display += "for $" + x6.toFixed(2) + "<br/>";
+         }
+         if (form.april29.checked) {
+            // how many tickets?
+            x7 = form.april29qty.value;
+            price = form.april29price.value;
+            x7 = parseInt(x7) * parseFloat(price);
+            display += "for $" + x7.toFixed(2) + "<br/>";
+         }
+         let totalNumTickets = x1 + x2 + x3 + x4 + x5 + x6 + x7;
+         //alert ("You owe for " + totalNumTickets)
+         console.log("You owe $" + totalNumTickets.toFixed(2));
+
+         let msgarea = document.getElementById('display');
+         msgarea.innerHTML = "You chose the date(s) of...<br/>" + display + " and will owe a total of $" + totalNumTickets.toFixed(2);
+
+         var name = form.name.value;
+         console.log('name is ' + name);
+         results = validateName(name);
+         // if names not valid there is an alert
+         // check for @ sign
+         var email = form.email.value;
+         console.log('email is ' + email);
+         results = validateEmail(email);
+
+         return false;
+      }
+
+      function validateName(name){
+         if (name.length < 2) {
+            alert("input rejected. Name must be longer");
+            return false;
+         }
+         digits="0123456789";
+         alpha="abcdefghijklmnopqrstuvwxyz";
+         alphanum = alpha + digits;
+         name = name.toLowerCase();
+         for (i=0; i<name.length; i++) {
+            if (alphanum.indexOf(name.charAt(i)) == -1) {
+               alert("Names can only contain letters or digits")
+               return false;
+            }
+         }
+        }
+
+      function validateEmail(email){
+         if (email.length < 2) {
+            alert("Input rejected. Email must be longer");
+            return false;
+         }
+         if (email.indexOf('@') === -1) {
+            alert("Email must contain @");
+            return false;
+         }
+         if(email.indexOf('.') === -1){
+            alert("Email must contain a .");
+            return false;
+         }
+         return true;
+      }
+     
+    </script>
+</head>
+<body>
+   <form method="get" onSubmit="return processForm(this)" >
+   <!-- Katherine Rueckert's Code -->
+    <div class="soccergrid">
+        <!-- row 0 -->
+        <div class="cell1">1</div>
+        <div class="cell2">2</div>
+        <div class="cell3">3</div>
+        <div class="cell4">4</div>
+        <div class="cell5">5</div>
+        <div class="cell6">6</div>
+        <div class="cell7">7</div>
+        <div class="cell8">8</div>
+        <div class="cell9">9</div>
+        <div class="cell10">10</div>
+        <div class="cell11">11</div>
+        <div class="cell12">12</div>
+
+        <!-- row 1 -->
+         <div class="sidespace">&nbsp;</div>
+         <!-- left soccer player image -->
+         <div class="soccerplayer">
+            <img class="smallimage" src="images/soccerplayer.jpg" alt="person kicking a soccer ball" />
+         </div>
+
+         <!-- center title -->
+          <div class="centertitle titlestyle">
+            LAKE UKICKEE <br/> SOCCER
+          </div>
+
+         <!-- right lake image -->
+         <div class="lake">
+            <img class="smallimage" src="images/lake.jpg" alt="lake with mountains in the background" />
+         </div>
+
+
+         <!-- row 2 -->
+          <br/><br/><br/>
+          <div class="buttongrid">
+            <div class="buttonsstyle">
+               <a class="buttonstext" href="index.html">
+                  <img class="soccerball" src="images/ball.png" alt="soccer ball" />
+                  Home
+               </a>
+            </div>
+            
+             <br/>
+             <div class="buttonsstyle">
+               <a class="buttonstext" href="photos.html">
+                  <img class="soccerball" src="images/ball.png" alt="soccer ball" />
+                  Photos
+               </a>
+             </div>
+
+             <br/>
+             <div class="buttonsstyle">
+               <a class="buttonstext" href="soccerrules.html">
+                  <img class="soccerball" src="images/ball.png" alt="soccer ball" />
+                  Soccer Rules
+               </a>
+             </div>
+             
+             <br/>
+             <div class="buttonsstyle">
+               <a class="buttonstext" href="teamschedule.html">
+                  <img class="soccerball" src="images/ball.png" alt="soccer ball" />
+                  Team Schedule
+               </a>
+             </div>
+             
+             <br/>
+             <div class="buttonsstyle" >
+               <a class="buttonstext" href="tickets.html">
+                  <img class="soccerball" src="images/ball.png" alt="soccer ball" />
+                  Get tickets online!
+               </a>
+             </div>
+             
+             <br/>
+             <div class="buttonsstyle">
+               <a class="buttonstext" href="aboutus.html">
+                  <img class="soccerball" src="images/ball.png" alt="soccer ball" />
+                  Find us
+               </a>
+             </div>
+             
+          </div>
+
+   
+          <!-- check boxes -->
+          
+            <div class="checkboxgrid liststyle">
+            
+               Game Time
+               <br/><br/>
+               <input type="checkbox" id="march31" name="march31" />
+               <label for="march31"> March 31 6:00pm</label>
+               <input type="hidden" name="march31price" value="12.50" />
+               <br>
+               <input type="checkbox" id="april1" name="april1" />
+               <label for="april1"> April 1 6:00pm</label>
+               <input type="hidden" name="april1price" value="10.50" />
+               <br>
+               <input type="checkbox" id="april8" name="april8" />
+               <label for="april8"> April 8 7:00pm</label>
+               <input type="hidden" name="april8price" value="10.50" />
+               <br/>
+               <input type="checkbox" id="april14" name="april14" />
+               <label for="april14"> April 14 6:30pm</label>
+               <input type="hidden" name="april14price" value="12.50" />
+               <br>
+               <input type="checkbox" id="april18" name="april18" />
+               <label for="april18"> April 18 6:00pm</label>
+               <input type="hidden" name="april18price" value="11.00" />
+               <br>
+               <input type="checkbox" id="april21" name="april21" />
+               <label for="april21"> April 21 5:00pm</label>
+               <input type="hidden" name="april21price" value="12.50" />
+               <br>
+               <input type="checkbox" id="april29" name="april29" />
+               <label for="april29"> April 29 7:00pm</label>
+               <input type="hidden" name="april29price" value="12.50" />
+               <br><br>
+          </div>
+          
+         <!-- opponents -->
+          <div class="liststyle opponentsmargin opponentsgrid">
+            Opponents
+            <br/><br/>
+            Yucon Village
+            <br/>
+            Beach Park
+            <br/>
+            Monarch River
+            <br/>
+            Sands Resort
+            <br/>
+            Harborside
+            <br/>
+            Yucon Village
+            <br/>
+            Sands Resort
+          </div>
+
+          <!-- price per ticket -->
+           <div class="liststyle marginstyle">
+            Price per ticket
+            <br/><br/>
+            $12.50
+            <br/>
+            $10.50
+            <br/>
+            $10.50
+            <br/>
+            $12.50
+            <br/>
+            $11.00
+            <br/>
+            $12.50
+            <br/>
+            $12.50
+           </div>
+
+           <!-- order quantity -->
+           <div class="liststyle qtygrid marginstyle">
+            Order Quantity
+            <br/><br/>
+            Qty:
+            <input type="number" value="0" name="march31qty" />
+            <br/>
+            Qty:
+            <input type="number" value="0" name="april1qty" />
+            <br/>
+            Qty:
+            <input type="number" value="0" name="april8qty" />
+            <br/>
+            Qty:
+            <input type="number" value="0" name="april14qty" />
+            <br/>
+            Qty:
+            <input type="number" value="0" name="april18qty" />
+            <br/>
+            Qty:
+            <input type="number" value="0" name="april21qty" />
+            <br/>
+            Qty:
+            <input type="number" value="0" name="april29qty" />
+            <br/>
+           </div>
+
+
+           <!-- images on the right -->
+            <div class="rightsidegrid rightsidestyle">
+               OUR SPONSORS
+               <br/><br/>
+               <a href="soccerstore.html"/>
+                  <img class="sponsors" src="images/soccerball.jpg" alt="holding soccer ball in the air" />
+               </a>
+               <br/>
+               <div class="grayborder">
+                  Shop at our Soccer <br/> Superstore!
+                  <br/><br/>
+               </div>
+               <br/>
+               <a href="sponsor.html"/>
+                  <img class="sponsors" src="images/soccerball2.jpg" alt="soccer ball on grass" />
+               </a>
+               <br/>
+               <div class="grayborder">
+                  Check us for great deals <br/> on soccergifts
+                  <br/><br/>
+               </div>
+               <br/>
+               <a href="http://www.ukickee.org"/>
+                  <img class="sponsors" src="images/soccerball3.jpg" alt="soccer ball and cleats" />
+               </a>
+               <br/>
+               <div>
+                  Visit Lake Ukickee
+                  <br/><br/>
+               </div>
+            </div>
+
+            <!-- input name and email form -->
+            <div class="processingordergrid processingorderstyle">
+               <label for="name">Your name:</label>
+               <input name="name" id="name" type="text" required />
+               <br/>
+               <label for="email">Email address:</label>
+               <input name="email" id="email" type="text" required />
+               <br/>
+               <input class="processorderbutton" type="submit" value="Process my order!" />
+               <br/>
+               <div class="copystyle">&copy 2024 Katherine Rueckert</div>
+               <div class="bottomborder"></div>
+            </div>
+
+         
+   </form>
+
+   <div class="displaystyle" id="display"></div>
+
+   </div>
+    
+</body>
+</html>
