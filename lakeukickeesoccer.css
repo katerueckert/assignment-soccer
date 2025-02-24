@@ -1,0 +1,160 @@
+body{
+    background-image: url('images/grassy.jpg');
+    font-family: Comic Sans MS;
+    font-size:0.9em;
+    color:white;
+}
+.smallimage{
+    width:90%;
+    max-width:100%;
+    border: groove 6px lightgreen;
+    margin:1em;
+}
+hr{
+   background-color:lightgreen;
+   height:5px;
+   border:none;
+}
+.titlestyle{
+    color:darkgreen;
+    font-size: 1.5em;
+    background-image: linear-gradient(seagreen, white, darkgreen);
+    padding-left: 14em;
+    padding-right: 14em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border: thick solid lightgreen;
+}
+.soccerball{
+    vertical-align:middle;
+    padding-right:1em;
+    max-width:100%;
+    width:20%;
+}
+.sponsors{
+    max-width:100%;
+    width:50%;
+}
+.buttonsstyle{
+    background-image: linear-gradient(seagreen, white, darkgreen);
+    padding-left: 0.5em;
+    padding-right: 2em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    margin-left: 2em;
+    margin-right: -4em;
+    border-radius: 70px;
+}
+.buttonstext{
+    text-decoration: none;
+    color: darkgreen;
+}
+.buttonstext:hover{
+    color:white;
+    background-color: darkgreen;
+}
+.liststyle{
+    line-height:1.75em;
+}
+.marginstyle{
+    margin-left: 1em;
+}
+.opponentsmargin{
+    margin-left: -2em;
+}
+.rightsidestyle{
+    font-size:1em;
+    text-align: center;
+    border-left: thick solid lightgreen;
+}
+.grayborder{
+    border-bottom: thick solid gray;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+.processingorderstyle{
+    color:white;
+    text-align: right;
+    margin-top: -19em;
+    line-height:2em;
+}
+.processorderbutton{
+    font-size:1.5em;
+    margin-top: 0.2em;
+}
+.bottomborder{
+    border-bottom: thick solid lightgreen;
+    margin-top:2em;
+    margin-right: -22em;
+    margin-left: -20em;
+}
+
+/* home page */
+.textstyle{
+    margin-right: -2em;
+}
+.textgrid{
+    grid-column: 4/ span 6;
+}
+.copystyle{
+    text-align: center;
+}
+.displaystyle{
+    grid-column: 6/ span 3;
+    margin-top: -8em;
+    padding: 2em;
+}
+
+
+/* grid stuff */
+.processingordergrid{
+    grid-column: 6/span 2;
+}
+.qtygrid{
+    grid-column: 8/ span 2;
+}
+.rightsidegrid{
+    grid-column: 11/ span 2;
+}
+.checkboxgrid{
+    grid-column: 4/ span 2;
+}
+.buttongrid{
+    grid-column: 1/ span 2;
+}
+.soccerplayer{
+    grid-column: 1/ span 3;
+    justify-self:center;
+    align-self:center;
+}
+.lake{
+    grid-column: 10/ span 3;
+    justify-self:center;
+    align-self:center;
+}
+.centertitle{
+    grid-column: 4/ span 6;
+    justify-self:center;
+    align-self:center;
+}
+.sidespace{
+    grid-column: 1/span 1;
+}
+.soccergrid{
+    display:grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.cell1 {grid-column: 1/span 1;}
+.cell2 {grid-column: 2/span 1;}
+.cell3 {grid-column: 3/span 1;}
+.cell4 {grid-column: 4/span 1;}
+.cell5 {grid-column: 5/span 1;}
+.cell6 {grid-column: 6/span 1;}
+.cell7 {grid-column: 7/span 1;}
+.cell8 {grid-column: 8/span 1;}
+.cell9 {grid-column: 9/span 1;}
+.cell10 {grid-column: 10/span 1;}
+.cell11 {grid-column: 11/span 1;}
+.cell12 {grid-column: 12/span 1;}
